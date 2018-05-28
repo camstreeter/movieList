@@ -24,28 +24,26 @@ class App extends React.Component {
   }
   
   handleWatched() {
-    var toWatchMovies = this.state.movies.filter(function(movie) {
-      return movie.watched === false
-    });
-    var watchedMovies = this.state.movies.filter(function(movie) {
-      return movie.watched === true
-    });
-    console.log(this.state)
+    // var toWatchMovies = this.state.movies.filter(function(movie) {
+    //   return movie.watched === false
+    // });
+    // var watchedMovies = this.state.movies.filter(function(movie) {
+    //   return movie.watched === true
+    // });
     this.setState({
-      movies: watchedMovies
+      movies: this.state.watchedMovies
     }) 
   }
   
   handleToWatch() {
-    var toWatchMovies = this.state.movies.filter(function(movie) {
-      return movie.watched === false
-    });
-    var watchedMovies = this.state.movies.filter(function(movie) {
-      return movie.watched === true
-    });
-    console.log(this.state)
+    // var toWatchMovies = this.state.movies.filter(function(movie) {
+    //   return movie.watched === false
+    // });
+    // var watchedMovies = this.state.movies.filter(function(movie) {
+    //   return movie.watched === true
+    // });
     this.setState({
-      movies: toWatchMovies
+      movies: this.state.toWatchMovies
     }) 
   }
   
@@ -72,12 +70,18 @@ class App extends React.Component {
         }
       }
     });
-    // this.state.toWatchMovies = this.state.movies.filter(function(movie) {
-    //   return movie.watched === false
-    // });
-    // this.state.watchedMovies = this.state.movies.filter(function(movie) {
-    //   return movie.watched === true
-    // });
+    var toWatchMovies = this.state.movies.filter(function(movie) {
+      return movie.watched === false
+    });
+    this.setState({
+      toWatchMovies: toWatchMovies
+    })
+    var watchedMovies = this.state.movies.filter(function(movie) {
+      return movie.watched === true
+    });
+    this.setState({
+      watchedMovies: watchedMovies
+    })
   }
   
   handleSearch() {
