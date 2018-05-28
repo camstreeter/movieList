@@ -1,7 +1,7 @@
 var MovieList = (props) => (
   <div>
     {props.movies.map((movie) =>
-      <Movie movie={movie} watchedCheck={props.watchedCheck} />
+      <Movie movie={movie} onTitleClick={props.onTitleClick} watchedCheck={props.watchedCheck} />
     )}
   </div>
 )
